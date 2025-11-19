@@ -1,8 +1,8 @@
 function getWeather() {
     const city = document.getElementById("city").value;
-    const apiKey = "d01ab1f733f63d2aeda99b05219049bc";
+    const apiKey = "5947bb97b9de4f38022b350614b36cf5";
   
-    fetch(`https://api.weatherstack.com/current?q=${city}&access_key=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
       .then(response => response.json())
       .then(data => {
         document.getElementById("result").innerHTML = `
