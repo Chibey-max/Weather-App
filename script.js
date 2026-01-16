@@ -1,4 +1,10 @@
-function getWeather() {
+const btn = document.querySelector(`#btn`);
+btn.addEventListener(`click`,()=>{getWeather();})
+btn.addEventListener(`click`, (e)=>{
+  if(e.key === `Enter`){getWeather();}
+});
+
+ function getWeather(){
     const city = document.getElementById("city").value;
     const apiKey = "5947bb97b9de4f38022b350614b36cf5";
   
@@ -11,8 +17,11 @@ function getWeather() {
           <p>Weather: ${data.weather[0].description}</p>
         `;
       })
-      .catch(() => {
-        document.getElementById("result").innerHTML = "City not found!";
-      });
-  }
+   
+      
   
+  .catch( (error) => {
+    document.getElementById(`result`).innerHTML = `City Not found`;
+  });
+  }
+
